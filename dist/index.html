@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hani Esreb | Future-Ready Engineer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              cyber: {
+                black: 'rgb(var(--c-black) / <alpha-value>)',
+                dark: 'rgb(var(--c-dark) / <alpha-value>)',
+                primary: 'rgb(var(--c-primary) / <alpha-value>)',
+                secondary: 'rgb(var(--c-secondary) / <alpha-value>)',
+                accent: 'rgb(var(--c-accent) / <alpha-value>)',
+                text: 'rgb(var(--c-text) / <alpha-value>)',
+                dim: 'rgb(var(--c-dim) / <alpha-value>)'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'hero-glow': 'conic-gradient(from 180deg at 50% 50%, rgb(var(--c-primary)) 0deg, rgb(var(--c-secondary)) 180deg, rgb(var(--c-accent)) 360deg)',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shine': 'shine 1s forwards',
+              'spin-slow': 'spin 12s linear infinite',
+              'spin-reverse-slower': 'spin 15s linear infinite reverse',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              'pulse-glow': {
+                '0%, 100%': { opacity: '1', filter: 'brightness(1)' },
+                '50%': { opacity: '0.8', filter: 'brightness(1.2)' },
+              },
+              shine: {
+                '0%': { left: '-100%' },
+                '100%': { left: '200%' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        /* Light Mode Defaults */
+        --c-black: 248 250 252; /* Slate 50 */
+        --c-dark: 255 255 255;  /* White */
+        --c-primary: 59 130 246; /* Blue 500 */
+        --c-secondary: 139 92 246; /* Violet 500 */
+        --c-accent: 6 182 212;   /* Cyan 500 */
+        --c-text: 15 23 42;      /* Slate 950 */
+        --c-dim: 71 85 105;      /* Slate 600 */
+      }
+      
+      .dark {
+        /* Dark Mode Overrides */
+        --c-black: 3 7 18;      /* Slate 950 */
+        --c-dark: 15 23 42;     /* Slate 900 */
+        --c-primary: 59 130 246;
+        --c-secondary: 139 92 246;
+        --c-accent: 6 182 212;
+        --c-text: 241 245 249;  /* Slate 100 */
+        --c-dim: 100 116 139;   /* Slate 500 */
+      }
+
+      body {
+        background-color: rgb(var(--c-black));
+        color: rgb(var(--c-text));
+        overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      /* Modern Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgb(var(--c-black));
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--c-dim));
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--c-text));
+      }
+      
+      /* Glassmorphism Refined */
+      .glass-panel {
+        background: rgba(var(--c-dark), 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(var(--c-text), 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      
+      .glass-card-hover:hover {
+        background: rgba(var(--c-dark), 0.8);
+        border-color: rgba(var(--c-primary), 0.5);
+        box-shadow: 0 0 20px rgba(var(--c-primary), 0.15);
+      }
+
+      .text-gradient {
+        background: linear-gradient(to right, rgb(var(--c-primary)), rgb(var(--c-secondary)), rgb(var(--c-accent)));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.5.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-SG906AZd.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+</body>
+</html>
